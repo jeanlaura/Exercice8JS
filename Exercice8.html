@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>EXERCICE FIVE</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body id="exercice8">
+    <div class="container-fluid">
+      <h1>EXERCICE 8 : ÂGE OU PAS ÂGE, TEL EST LA QUESTION !</h1>
+      <form name="form8" action="" onsubmit="return validateForm()" method="post">
+        <label for="age">Votre âge : </label><input type="text" id="age" name="age"/><br/>
+        <input type="submit" name="submit" id="submit" value="Valider"></input>
+      </form>
+    </div>
+    <script type="text/javascript">
+      function validateForm() {
+        var age1 = document.forms["form8"]["age"].value;
+        // if (age1 < 18) {
+        //   alert("Vous êtes mineur ! Donc Go Adibou ;)");
+        //   return false;
+        // }else if(age1 >= 18){
+        //   alert("Vous êtes majeur ! Rentré donc !");
+        //   return false;
+        // }
+        var regex = /[0-9]/ ;
+        if (!regex.test(age1)||age1 == ""||isNaN(age1)) {
+          alert('Erreur dans la saisie !');
+        }else if (age1 < 18) {
+          alert("Vous êtes mineur ! Donc Go Adibou ;)");
+          return false;
+        }else if(age1 >= 18){
+          alert("Vous êtes majeur ! Rentré donc !");
+          return false;
+        };
+      }
+    </script>
+  </body>
+</html>
